@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["TEAMID.com.kept.Kept"],
+        "appIDs": ["FJSRP45MYR.com.pastebook.app"],
         "components": [
           { "/": "/invite/*", "comment": "Scrapbook invitations open in pastebook" }
         ]
