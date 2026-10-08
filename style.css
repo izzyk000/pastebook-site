@@ -1,0 +1,60 @@
+/* pastebook website. Pressed garden palette, bundled OFL fonts, no trackers. */
+@font-face { font-family: "Caveat"; src: url("/fonts/Caveat.ttf") format("truetype"); font-weight: 400 700; font-display: swap; }
+@font-face { font-family: "Nunito"; src: url("/fonts/Nunito.ttf") format("truetype"); font-weight: 200 1000; font-display: swap; }
+
+:root {
+  --paper: #F7F4EA; --sheet: #FFFDF6; --line: #DCD8C6;
+  --ink: #263428; --soft: #5C6A5D; --accent: #2E6A4B;
+  --butter: rgba(242, 207, 107, .82); --sage: #9CC48C; --blush: #F1B2A6;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 500 17px/1.6 "Nunito", system-ui, sans-serif;
+  background-image: radial-gradient(rgba(120, 100, 60, .05) 1px, transparent 1px); background-size: 4px 4px;
+}
+a { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
+a:hover { color: #1F4A34; }
+header.site { max-width: 760px; margin: 0 auto; padding: 28px 20px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+header.site img { height: 44px; width: auto; display: block; }
+header.site nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 15px; }
+header.site nav a { text-decoration: none; color: var(--ink); }
+header.site nav a[aria-current="page"] { color: var(--accent); text-decoration: underline; }
+main { max-width: 760px; margin: 0 auto; padding: 24px 20px 64px; }
+.sheet {
+  background: var(--sheet); border: 1px solid var(--line); padding: 32px 28px; position: relative;
+  box-shadow: 0 10px 30px rgba(50, 35, 10, .10), 0 1px 3px rgba(50, 35, 10, .08);
+}
+.sheet.tape::before {
+  content: ""; position: absolute; top: -12px; left: 50%; width: 92px; height: 24px; margin-left: -46px;
+  background: var(--butter); transform: rotate(-3deg);
+}
+h1, h2 { font-family: "Caveat", cursive; font-weight: 700; line-height: 1.05; margin: 0 0 12px; }
+h1 { font-size: 46px; }
+h2 { font-size: 32px; margin-top: 34px; }
+h3 { font-size: 18px; margin: 22px 0 6px; }
+p, ul { margin: 0 0 14px; }
+ul { padding-left: 22px; }
+li { margin-bottom: 6px; }
+.soft { color: var(--soft); }
+.meta { font-size: 14px; color: var(--soft); }
+.draft { display: inline-block; font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  color: #8A5A00; background: #FBF1CF; border: 1px solid #E8D690; padding: 3px 10px; margin-bottom: 18px; }
+.button {
+  display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 800;
+  padding: 13px 22px; border-radius: 14px; box-shadow: 0 3px 8px rgba(30, 60, 40, .3);
+}
+.button:hover { color: #fff; background: #285E42; }
+.note { background: rgba(156, 196, 140, .25); border: 1px solid rgba(156, 196, 140, .7); padding: 14px 16px; margin: 18px 0; }
+footer { max-width: 760px; margin: 0 auto; padding: 0 20px 40px; font-size: 14px; color: var(--soft); display: flex; gap: 18px; flex-wrap: wrap; }
+footer a { color: var(--soft); font-weight: 600; }
+.hero { text-align: center; padding: 40px 28px; }
+.hero img.icon { width: 112px; height: 112px; transform: rotate(-4deg); }
+.hero h1 { font-size: 56px; margin-top: 18px; }
+.steps li { margin-bottom: 10px; }
+@media (max-width: 520px) {
+  .sheet { padding: 26px 20px; }
+  h1 { font-size: 40px; }
+  .hero h1 { font-size: 46px; }
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You’re invited · pastebook</title>
+<meta name="description" content="Someone invited you to make a scrapbook together in pastebook.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="site">
+  <a href="/"><img src="/logo.svg" alt="pastebook" width="129" height="44"></a>
+</header>
+<main>
+  <div class="sheet tape">
+    <h1>You’re invited to a scrapbook</h1>
+    <p>Someone would like you to make a scrapbook with them in pastebook.</p>
+
+    <!-- With pastebook installed, tapping the link opens the app before this
+         page loads. This button covers links opened inside a browser. -->
+    <p id="open" hidden><a class="button" id="open-link" href="#">Open in pastebook</a></p>
+
+    <h2>How to join</h2>
+    <ol class="steps">
+      <li>Get pastebook on your iPhone. <span class="soft">(Coming soon to the App Store.)</span></li>
+      <li>Open it and choose your name. If the invitation was sent to your email, sign in with that email in <strong>You → Account &amp; sync</strong>.</li>
+      <li>Go to <strong>You → Invitations</strong> and choose <strong>Join scrapbook</strong>.</li>
+    </ol>
+    <div class="note">Invitations last seven days. Only accept invitations from people you know. If yours has expired, ask them to send a new one.</div>
+    <p class="meta">Need help? Write to <a href="mailto:support@pastebook.app">support@pastebook.app</a>.</p>
+  </div>
+</main>
+<footer>
+  <a href="/support/">Support</a>
+  <a href="/privacy/">Privacy</a>
+  <a href="/terms/">Terms</a>
+</footer>
+<script>
+  // Only a well-formed invitation ID is passed on to the app.
+  const id = new URLSearchParams(location.search).get("id") || location.pathname.split("/")[2] || "";
+  if (/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) {
+    document.getElementById("open-link").href = "kept://invite/" + id.toLowerCase();
+    document.getElementById("open").hidden = false;
+  }
+</script>
+</body>
+</html>
